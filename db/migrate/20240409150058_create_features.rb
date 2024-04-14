@@ -13,5 +13,8 @@ class CreateFeatures < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
+
+    add_index :features, :mag_type
+    add_index :features, :time
   end
 end

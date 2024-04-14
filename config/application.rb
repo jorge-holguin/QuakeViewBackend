@@ -11,6 +11,14 @@ module Backend
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
+    # Configuración de CORS
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'  # Permitir solicitudes desde cualquier origen
+        resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      end
+    end
+
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.

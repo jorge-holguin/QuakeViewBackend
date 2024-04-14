@@ -11,6 +11,4 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :index]
     end
   end
-
-  # Si tienes más rutas que definir, pueden ir aquí
 end

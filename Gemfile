@@ -20,19 +20,24 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+# Hotwire's modest JavaScript framework (https://stimulus.hotwired.dev)
 gem "stimulus-rails"
 
+# Gem for serializing objects into JSON
 gem "active_model_serializers"
 
+# Gem for making HTTP requests
 gem "httparty"
 
+# Middleware for configuring CORS
 gem "rack-cors"
 
 group :development, :test do
   # RSpec for testing
   gem "rspec-rails", "~> 5.0.0"
   
+  gem "will_paginate"
+
   # Factory Bot for test data
   gem "factory_bot_rails"
   
