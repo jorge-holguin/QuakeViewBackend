@@ -32,11 +32,11 @@ gem "httparty"
 # Middleware for configuring CORS
 gem "rack-cors"
 
+gem 'will_paginate', '~> 3.1.0'
+
 group :development, :test do
   # RSpec for testing
   gem "rspec-rails", "~> 5.0.0"
-  
-  gem "will_paginate"
 
   # Factory Bot for test data
   gem "factory_bot_rails"

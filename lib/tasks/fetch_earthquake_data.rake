@@ -4,7 +4,7 @@ namespace :earthquake_data do
       require 'httparty'
   
       response = HTTParty.get('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_monthe.geojson')
-      features = response.parsed_response['features']
+      features = response.parsed_response['features'] || []
       
       features.each do |feature|
         next if feature['properties']['mag'].nil? || feature['properties']['place'].nil?

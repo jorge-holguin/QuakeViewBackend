@@ -2,11 +2,8 @@ module Api
   class CommentsController < ApplicationController
     # Método para manejar las solicitudes GET a /api/features/:feature_id/comments
     def index
-      # Encuentra el evento sismológico correspondiente
       feature = Feature.find(params[:feature_id])
-      # Obtén los comentarios asociados a ese evento sismológico
       comments = feature.comments
-      # Responde con los comentarios en formato JSON
       render json: comments
     end
 
@@ -21,9 +18,19 @@ module Api
       end
     end
 
+    # Método para manejar las solicitudes DELETE para borrar un comentario
+    def destroy
+      comment = Comment.find(params[:id])
+      if comment.destroy
+        head :no_content  # Responde con éxito y sin contenido si el comentario se elimina correctamente
+      else
+        render json: comment.errors, status: :unprocessable_entity
+      end
+    end
+
     private
 
-    # Método para definir los parámetros permitidos para crear un comentario
+    # Método para definir los parámetros permitidos para los comentarios
     def comment_params
       params.require(:comment).permit(:body)
     end
