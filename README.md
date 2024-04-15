@@ -13,6 +13,8 @@ git ad
 Clone the repository and install dependencies:
 ```bash
 git clone https://github.com/jorge-holguin/QuakeViewBackend.git
+```
+```bash
 cd QuakeWatch/backend
 bundle install
 ```

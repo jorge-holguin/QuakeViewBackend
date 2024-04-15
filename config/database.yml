@@ -1,21 +1,20 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # Configures the number of threads for database connection pool.
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: quake_tracker
   username: postgres
-  password: Z@rverus11
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   host: localhost
 
 test:
   <<: *default
   database: quake_tracker_test
   username: postgres
-  password: Z@rverus11
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   host: localhost
 
 production:
