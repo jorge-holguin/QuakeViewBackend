@@ -1,24 +1,55 @@
-# README
+# QuakeWatch Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+QuakeWatch is an application for monitoring and visualizing real-time earthquake data, using data provided by the USGS (United States Geological Survey). This backend is developed in Ruby on Rails and is responsible for processing and serving earthquake data through a REST API.
 
-Things you may want to cover:
+## Environment Setup
+### Requirements
+- Ruby 3.2.3
+- Rails 7.1.3.2
+- PostgreSQL
 
-* Ruby version
+### Installation
+Clone the repository and install dependencies:
+```bash
+git clone [repository-url]
+cd QuakeWatch/backend
+bundle install
+```
 
-* System dependencies
+### Database Configuration
+Make sure to configure your connection string in the config/database.yml file and set the DATABASE_URL environment variable.
 
-* Configuration
+Running Migrations
+To set up your database, run:
 
-* Database creation
+```bash
+rails db:create db:migrate
+```
 
-* Database initialization
+### Scheduled Tasks
+To import earthquake data from the USGS API, run:
 
-* How to run the test suite
+```bash
+rake earthquake_data:fetch
+```
+### Deployment on Fly.io
+This project is configured to deploy on Fly.io. Follow the steps in Fly.io's official documentation to set up deployment.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Environment Variables
+Define necessary variables like DATABASE_URL using flyctl secrets set.
 
-* Deployment instructions
+### Usage
+The Rails server can be started locally with:
 
-* ...
+```bash
+rails server
+```
+
+To access the API, navigate to http://localhost:3000/api/features.
+
+### Contributions
+Contributions are welcome. Please submit your pull requests to the main branch.
+
+### License
+MIT License
