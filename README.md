@@ -8,11 +8,11 @@ QuakeWatch is an application for monitoring and visualizing real-time earthquake
 - Ruby 3.2.3
 - Rails 7.1.3.2
 - PostgreSQL
-
+git ad
 ### Installation
 Clone the repository and install dependencies:
 ```bash
-git clone [repository-url]
+git clone https://github.com/jorge-holguin/QuakeViewBackend.git
 cd QuakeWatch/backend
 bundle install
 ```
