@@ -45,4 +45,5 @@ namespace :earthquake_data do
   end
 end
 
+
   
